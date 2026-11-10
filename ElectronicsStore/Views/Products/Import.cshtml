@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Импорт товаров";
+}
+
+<h2>Импорт товаров из CSV</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div style="color: red; border: 1px solid red; padding: 10px; margin-bottom: 10px;">
+        @ViewBag.Error
+    </div>
+}
+
+<form asp-action="Import" method="post" enctype="multipart/form-data">
+    <div style="margin-bottom: 15px;">
+        <label for="file">Выберите CSV-файл:</label>
+        <input type="file" name="file" id="file" accept=".csv" required />
+    </div>
+    
+    <!-- ОБРАТИ ВНИМАНИЕ: type="submit" -->
+    <button type="submit" style="padding: 10px 20px; background-color: green; color: white; border: none; cursor: pointer;">
+        Загрузить и импортировать
+    </button>
+    <a asp-action="Index" style="margin-left: 15px;">Назад к списку</a>
+</form>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ElectronicsStore.Models.Product>
+
+@{
+    ViewData["Title"] = "Список товаров";
+}
+
+<h2>Список товаров</h2>
+
+<p>
+    <a asp-action="Import" class="btn btn-primary">Импортировать товары из CSV</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Артикул</th>
+            <th>Название</th>
+            <th>Бренд</th>
+            <th>Цена</th>
+            <th>Категория</th>
+            <th>Остаток</th>
+            <th>Гарантия (мес)</th>
+            <th>Активен</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr><td colspan="8" class="text-center">Товаров пока нет. Загрузите CSV-файл.</td></tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Sku</td>
+                    <td>@item.Name</td>
+                    <td>@item.Brand</td>
+                    <td>@item.Price @item.Currency</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.StockQuantity</td>
+                    <td>@item.WarrantyMonths</td>
+                    <td>@(item.IsActive ? "Да" : "Нет")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

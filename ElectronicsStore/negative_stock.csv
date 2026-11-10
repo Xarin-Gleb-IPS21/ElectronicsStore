@@ -1,0 +1,2 @@
+sku,name,description,price,currency,category_name,stock,image_url,is_active,brand,warranty_months,model_number
+1004,Монитор Dell,Игровой монитор,29990,RUB,Компьютеры,-5,/images/monitor.jpg,true,Dell,36,U2419H

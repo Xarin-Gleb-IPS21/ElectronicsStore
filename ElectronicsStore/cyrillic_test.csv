@@ -1,0 +1,3 @@
+sku,name,description,price,currency,category_name,stock,image_url,is_active,brand,warranty_months,model_number
+2001,Смартфон "Яндекс",Ёмкий аккумулятор и яркий экран,15000,RUB,Смартфоны,10,/images/phone.jpg,true,Яндекс,12,Model-Щ
+2002,Пылесос "Буря",Мощный и бесшумный,8900,RUB,Бытовая техника,4,/images/vacuum.jpg,true,Буря,24,Б-500
